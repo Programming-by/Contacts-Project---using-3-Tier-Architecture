@@ -1,0 +1,13 @@
+C:\Users\User\Source\Repos\ContactsConsoleApp - Presentation Layer\bin\Debug\ContactsConsoleApp - Presentation Layer.exe.config
+C:\Users\User\Source\Repos\ContactsConsoleApp - Presentation Layer\bin\Debug\ContactsConsoleApp - Presentation Layer.exe
+C:\Users\User\Source\Repos\ContactsConsoleApp - Presentation Layer\bin\Debug\ContactsConsoleApp - Presentation Layer.pdb
+C:\Users\User\Source\Repos\ContactsConsoleApp - Presentation Layer\bin\Debug\ContactsBusinessLayer.dll
+C:\Users\User\Source\Repos\ContactsConsoleApp - Presentation Layer\bin\Debug\ContactsDataAccessLayer.dll
+C:\Users\User\Source\Repos\ContactsConsoleApp - Presentation Layer\bin\Debug\ContactsBusinessLayer.pdb
+C:\Users\User\Source\Repos\ContactsConsoleApp - Presentation Layer\bin\Debug\ContactsDataAccessLayer.pdb
+C:\Users\User\Source\Repos\ContactsConsoleApp - Presentation Layer\obj\Debug\ContactsConsoleApp - Presentation Layer.csproj.AssemblyReference.cache
+C:\Users\User\Source\Repos\ContactsConsoleApp - Presentation Layer\obj\Debug\ContactsConsoleApp - Presentation Layer.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\Source\Repos\ContactsConsoleApp - Presentation Layer\obj\Debug\ContactsConsoleApp - Presentation Layer.csproj.CoreCompileInputs.cache
+C:\Users\User\Source\Repos\ContactsConsoleApp - Presentation Layer\obj\Debug\ContactsConsoleApp - Presentation Layer.csproj.CopyComplete
+C:\Users\User\Source\Repos\ContactsConsoleApp - Presentation Layer\obj\Debug\ContactsConsoleApp - Presentation Layer.exe
+C:\Users\User\Source\Repos\ContactsConsoleApp - Presentation Layer\obj\Debug\ContactsConsoleApp - Presentation Layer.pdb
