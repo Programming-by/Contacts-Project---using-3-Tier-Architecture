@@ -7,7 +7,7 @@ namespace ContactsConsoleApp___Presentation_Layer
 {
     internal class Program
     {
-        public static void testFindContact(int ID)
+         static void testFindContact(int ID)
         {
 
             clsContacts Contact1 = clsContacts.Find(ID);
@@ -33,7 +33,7 @@ namespace ContactsConsoleApp___Presentation_Layer
 
         }
 
-        public static void testAddNewContact()
+         static void testAddNewContact()
         {
             clsContacts Contact1 = new clsContacts();
 
@@ -54,7 +54,7 @@ namespace ContactsConsoleApp___Presentation_Layer
 
         }
 
-        public static void testUpdateContact(int ID)
+         static void testUpdateContact(int ID)
         {
             clsContacts Contact1 = clsContacts.Find(ID);
 
@@ -90,13 +90,29 @@ namespace ContactsConsoleApp___Presentation_Layer
 
         }
 
+        static void ListContacts()
+        {
+            DataTable dataTable = clsContacts.GetAllContacts();
+
+            Console.WriteLine("Contacts Data");
+
+            foreach(DataRow row in dataTable.Rows)
+            {
+
+                Console.WriteLine($"{ row["ContactID"]}, {row["FirstName"]} {row["LastName"]} ");
+            }
+
+
+        }
 
         static void Main(string[] args)
         {
             //  testFindContact(2);
             //testAddNewContact();
-           // testUpdateContact(1);
-           testDeleteContact(10);
+            // testUpdateContact(1);
+            //testDeleteContact(10);
+
+            ListContacts();
 
 
             Console.ReadKey();
