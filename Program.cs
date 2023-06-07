@@ -105,6 +105,20 @@ namespace ContactsConsoleApp___Presentation_Layer
 
         }
 
+
+        static void testIsContactExist(int ID)
+        {
+            if (clsContacts.IsContactExist(ID))
+            {
+                Console.WriteLine("Yes, Contact is there");
+            } else
+            {
+                Console.WriteLine("No, Contact is not there");
+
+            }
+
+        }
+
         static void Main(string[] args)
         {
             //  testFindContact(2);
@@ -112,7 +126,9 @@ namespace ContactsConsoleApp___Presentation_Layer
             // testUpdateContact(1);
             //testDeleteContact(10);
 
-            ListContacts();
+            //ListContacts();
+
+            testIsContactExist(1);
 
 
             Console.ReadKey();
