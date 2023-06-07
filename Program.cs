@@ -53,10 +53,35 @@ namespace ContactsConsoleApp___Presentation_Layer
 
 
         }
+
+        public static void testUpdateContact(int ID)
+        {
+            clsContacts Contact1 = clsContacts.Find(ID);
+
+            Contact1.FirstName = "Mohammed";
+            Contact1.LastName = "Ahmad";
+            Contact1.Email = "Moh.Ahmad@gmail.com";
+            Contact1.Phone = "07999999";
+            Contact1.Address = "Irbid";
+            Contact1.DateOfBirth = new DateTime(1995, 1, 5, 5, 24, 0);
+            Contact1.CountryID = 1;
+            Contact1.ImagePath = "";
+
+            if (Contact1.Save())
+            {
+                Console.WriteLine("Contact Updated Successfully with id=" + Contact1.ID);
+            }
+
+
+        }
+
+
         static void Main(string[] args)
         {
             //  testFindContact(2);
-            testAddNewContact();
+            //testAddNewContact();
+            testUpdateContact(1);
+
 
             Console.ReadKey();
         }
