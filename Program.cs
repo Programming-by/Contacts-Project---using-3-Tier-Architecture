@@ -77,14 +77,19 @@ namespace ContactsConsoleApp___Presentation_Layer
 
          static void testDeleteContact(int ID)
         {
-            if (clsContacts.DeletContact(ID))
-            {
-                Console.WriteLine("Contact Deleted Successfully");
-            } else
-            {
-                Console.WriteLine("Contact Failed To Delete");
+            if (clsContacts.IsContactExist(ID))
 
-            }
+                if (clsContacts.DeletContact(ID))
+                {
+                    Console.WriteLine("Contact Deleted Successfully");
+                }
+                else
+                {
+                    Console.WriteLine("Contact Failed To Delete");
+
+                }
+            else
+                Console.WriteLine("The Contact with Contact id = " +  ID + " is not found");
 
 
 
@@ -124,11 +129,11 @@ namespace ContactsConsoleApp___Presentation_Layer
             //  testFindContact(2);
             //testAddNewContact();
             // testUpdateContact(1);
-            //testDeleteContact(10);
+            testDeleteContact(9);
 
             //ListContacts();
 
-            testIsContactExist(1);
+            //testIsContactExist(1);
 
 
             Console.ReadKey();
