@@ -1,16 +1,141 @@
 ﻿using System;
 using System.Data;
 using ContactsBusinessLayer;
-
+using CountriesBusinessLayer;
 
 namespace ContactsConsoleApp___Presentation_Layer
 {
     internal class Program
     {
+        //------------------Country Business-------------------//
+
+        static void testFindCountryByID(int ID)
+        {
+            clsCountry Country = clsCountry.Find(ID);
+            if (Country != null) { 
+
+            Console.WriteLine(Country.CountryName);
+
+            } else
+            {
+                Console.WriteLine("Country with [" + ID + "] Not found");
+
+            }
+        }
+
+
+        static void testFindCountryByName(string CountryName)
+        {
+
+            clsCountry Country = clsCountry.Find(CountryName);
+
+            if (Country != null)
+            {
+                Console.WriteLine("Country [" + Country.CountryName + "] is Found with ID = " + Country.ID);
+
+            } else
+            {
+                Console.WriteLine("Country [" + Country.CountryName + "] is Not Found");
+
+            }
+        }
+
+        static void testIsCountryExistByID(int ID)
+        {
+
+            if (clsCountry.IsCountryExist(ID))
+
+                Console.WriteLine("Yes, Country is there");
+
+             else  
+                
+                Console.WriteLine("No, Country is not there");
+
+        }
+
+        static void testIsCountryExistByName(string CountryName)
+        {
+            if (clsCountry.IsCountryExist(CountryName))
+
+                Console.WriteLine("Yes, Country is there");
+
+            else
+                Console.WriteLine("No, Country is Not there");
+        }
+
+        static void testAddNewCountry()
+        {
+            clsCountry Country = new clsCountry();
+
+            Country.CountryName = "Jordan";
+
+            if (Country.Save())
+            {
+                Console.WriteLine("Country Added Successfully with id=" + Country.ID);
+            }
+
+
+        }
+       
+        
+        static void testUpdateCountry(int ID)
+        {
+            clsCountry Country = clsCountry.Find(ID);
+
+            if (Country != null)
+            {
+            Country.CountryName = "USA";
+
+            if (Country.Save())
+            {
+                Console.WriteLine("Country updated Successfully ");
+            } else
+            {
+                Console.WriteLine("Country is you want to update is Not found!");
+
+            }
+
+            }
+
+        }
+       
+        
+        static void testDeleteCountry(int ID)
+        {
+            if (clsCountry.IsCountryExist(ID))
+
+                if (clsCountry.DeleteCountry(ID))
+
+                    Console.WriteLine("Country Deleted Successfully.");
+
+                else
+                    Console.WriteLine("Failed to Delete");
+
+            else
+                Console.WriteLine("Faild to delete: The Country with id = " + ID + " is not found");
+
+        }
+
+
+        static void ListCountries()
+        {
+            DataTable dataTable = clsCountry.GetAllCountries();
+
+            Console.WriteLine("Countries Data:");
+
+            foreach( DataRow row in dataTable.Rows)
+            {
+                Console.WriteLine($"{row["CountryID"]} , {row["CountryName"]}");
+            }
+
+        }
+
+
+        //------------------Contact Business-------------------//
          static void testFindContact(int ID)
         {
 
-            clsContacts Contact1 = clsContacts.Find(ID);
+            Contact Contact1 = Contact.Find(ID);
 
             if (Contact1 != null)
             {
@@ -35,7 +160,7 @@ namespace ContactsConsoleApp___Presentation_Layer
 
          static void testAddNewContact()
         {
-            clsContacts Contact1 = new clsContacts();
+            Contact Contact1 = new Contact();
 
             Contact1.FirstName = "Anas";
             Contact1.LastName = "Naamneh";
@@ -56,7 +181,7 @@ namespace ContactsConsoleApp___Presentation_Layer
 
          static void testUpdateContact(int ID)
         {
-            clsContacts Contact1 = clsContacts.Find(ID);
+            Contact Contact1 = Contact.Find(ID);
 
             Contact1.FirstName = "Mohammed";
             Contact1.LastName = "Ahmad";
@@ -77,9 +202,9 @@ namespace ContactsConsoleApp___Presentation_Layer
 
          static void testDeleteContact(int ID)
         {
-            if (clsContacts.IsContactExist(ID))
+            if (Contact.IsContactExist(ID))
 
-                if (clsContacts.DeletContact(ID))
+                if (Contact.DeletContact(ID))
                 {
                     Console.WriteLine("Contact Deleted Successfully");
                 }
@@ -97,7 +222,7 @@ namespace ContactsConsoleApp___Presentation_Layer
 
         static void ListContacts()
         {
-            DataTable dataTable = clsContacts.GetAllContacts();
+            DataTable dataTable = Contact.GetAllContacts();
 
             Console.WriteLine("Contacts Data");
 
@@ -113,7 +238,7 @@ namespace ContactsConsoleApp___Presentation_Layer
 
         static void testIsContactExist(int ID)
         {
-            if (clsContacts.IsContactExist(ID))
+            if (Contact.IsContactExist(ID))
             {
                 Console.WriteLine("Yes, Contact is there");
             } else
@@ -126,12 +251,22 @@ namespace ContactsConsoleApp___Presentation_Layer
 
         static void Main(string[] args)
         {
+             testFindCountryByID(2);
+            // testFindCountryByName("USA");
+           //  testIsCountryExistByID(100);
+           //  testIsCountryExistByName("USA");
+            // testAddNewCountry();
+            // testUpdateCountry(8);
+            // testDeleteCountry(6);
+           //  ListCountries();
+
+
             //  testFindContact(2);
             //testAddNewContact();
             // testUpdateContact(1);
-            testDeleteContact(9);
-
+            //testDeleteContact(9);
             //ListContacts();
+
 
             //testIsContactExist(1);
 
