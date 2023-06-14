@@ -14,7 +14,9 @@ namespace ContactsConsoleApp___Presentation_Layer
             clsCountry Country = clsCountry.Find(ID);
             if (Country != null) { 
 
-            Console.WriteLine(Country.CountryName);
+            Console.WriteLine("Country Name: " + Country.CountryName);
+            Console.WriteLine("Code: " + Country.Code);
+            Console.WriteLine("PhoneCode: " + Country.PhoneCode);
 
             } else
             {
@@ -31,7 +33,9 @@ namespace ContactsConsoleApp___Presentation_Layer
 
             if (Country != null)
             {
-                Console.WriteLine("Country [" + Country.CountryName + "] is Found with ID = " + Country.ID);
+                Console.WriteLine("Country [" + Country.CountryName + "] + is Found with ID = " + Country.ID);
+                Console.WriteLine("Code: " + Country.Code);
+                Console.WriteLine("PhoneCode: " + Country.PhoneCode);
 
             } else
             {
@@ -67,7 +71,9 @@ namespace ContactsConsoleApp___Presentation_Layer
         {
             clsCountry Country = new clsCountry();
 
-            Country.CountryName = "Jordan";
+            Country.CountryName = "Syria";
+            Country.Code = "Sy";
+            Country.PhoneCode = "963";
 
             if (Country.Save())
             {
@@ -84,9 +90,11 @@ namespace ContactsConsoleApp___Presentation_Layer
 
             if (Country != null)
             {
-            Country.CountryName = "USA";
+            Country.CountryName = "UAE";
+            Country.Code = "UA";
+            Country.PhoneCode = "71";
 
-            if (Country.Save())
+                if (Country.Save())
             {
                 Console.WriteLine("Country updated Successfully ");
             } else
@@ -125,7 +133,7 @@ namespace ContactsConsoleApp___Presentation_Layer
 
             foreach( DataRow row in dataTable.Rows)
             {
-                Console.WriteLine($"{row["CountryID"]} , {row["CountryName"]}");
+                Console.WriteLine($"{row["CountryID"]} , {row["CountryName"]},  {row["Code"]}, {row["PhoneCode"]}");
             }
 
         }
@@ -251,14 +259,14 @@ namespace ContactsConsoleApp___Presentation_Layer
 
         static void Main(string[] args)
         {
-             testFindCountryByID(2);
-            // testFindCountryByName("USA");
-           //  testIsCountryExistByID(100);
-           //  testIsCountryExistByName("USA");
-            // testAddNewCountry();
+            //testFindCountryByID(1);
+            //testFindCountryByName("Jordan");
+           // testIsCountryExistByID(1);
+            // testIsCountryExistByName("USA");
+           //  testAddNewCountry();
             // testUpdateCountry(8);
             // testDeleteCountry(6);
-           //  ListCountries();
+            // ListCountries();
 
 
             //  testFindContact(2);
